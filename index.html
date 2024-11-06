@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'> -->
+    <title>Icontech</title>
+
+    <!-- bootstrap cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <!-- fontawsome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- my css  -->
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+    <!-- navbar  -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <div class="logo-img "><img class="img-fluid" src="images/logo.png" alt=""></div>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <div class="navBtn d-flex flex-column my-1">
+                        <div class="bar1 my-1 rounded-3"
+                            style="width: 15px;border: 2px solid #0c0c0cd6;margin-left: 13px;"></div>
+                        <div class="bar2 my-1 rounded-3" style="width: 28px;border: 2px solid #0c0c0cd6;"></div>
+                    </div>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <a class="navbar-brand" href="#">
+                            <div class="logo-img "><img src="images/logo.png" alt=""></div>
+                        </a>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav m-auto mt-0 mb-lg-0 text-center">
+                            <li class="dropdown-link nav-item dropdown mx-1 pb-2 position-static">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    What we do?
+                                </a>
+                                <div class="nav-border"></div>
+                                <ul class="dropdown-menu w-100 rounded-0 ">
+                                    <li><a class="dropdown-item" href="#">Web Development</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Mobile App Development
+                                        </a></li>
+                                    <li><a class="dropdown-item" href="#">Digital Marketing</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Enterprise IT Solutions
+                                        </a></li>
+                                    <li><a class="dropdown-item" href="#">Training</a></li>
+
+                                    <div>
+                                        <div class="follow-us d-block ml-2" style="margin-top:140px ;">
+                                            <div>
+                                                <h4 class="text-light mx-3">Connect with Us</h4>
+                                            </div>
+                                            <div class="social-links d-flex align-items-center m-auto">
+                                                <div class="link facebook fs-2 mx-3">
+                                                    <a href="https://www.facebook.com/icontechin?ref=pages_you_manage"
+                                                        target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                                </div>
+
+                                                <div class="link instagram fs-2 mx-3">
+                                                    <a href="https://www.instagram.com/icontechindia/"
+                                                        target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                                </div>
+
+                                                <div class="link linkedIn fs-2 mx-3">
+                                                    <a href="https://www.linkedin.com/company/icontechindia/"
+                                                        target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                </div>
+
+                                                <div class="link x-twitter fs-2 mx-3">
+                                                    <a
+                                                        href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4"><i
+                                                            class="fa-brands fa-twitter"></i></a>
+                                                </div>
+
+                                                <div class="link x-twitter fs-2 mx-3">
+                                                    <a
+                                                        href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4">
+                                                        <i class="fa-brands fa-x-twitter"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="dropdown-link nav-item dropdown mx-1 position-static">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Our Solutions
+                                </a>
+                                <div class="nav-border"></div>
+                                <ul class="dropdown-menu w-100 rounded-0">
+                                    <li><a class="dropdown-item" href="#">Enterprise Resource Planning</a></li>
+                                    <li><a class="dropdown-item" href="#">HR and Payroll</a></li>
+                                    <li><a class="dropdown-item" href="#">Customer Relationship Management</a></li>
+                                    <li><a class="dropdown-item" href="#">Hospital Management System</a></li>
+                                    <li><a class="dropdown-item" href="#">Bussiness Analytics</a></li>
+                                    <li><a class="dropdown-item" href="#">Healthcare E-Learning</a></li>
+                                    <div>
+                                        <div class="follow-us d-block ml-2" style="margin-top:100px ;">
+                                            <div>
+                                                <h4 class="text-light mx-3">Connect with Us</h4>
+                                            </div>
+                                            <div class="social-links d-flex align-items-center m-auto">
+                                                <div class="link facebook fs-2 mx-3">
+                                                    <a href="https://www.facebook.com/icontechin?ref=pages_you_manage"
+                                                        target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                                </div>
+
+                                                <div class="link instagram fs-2 mx-3">
+                                                    <a href="https://www.instagram.com/icontechindia/"
+                                                        target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                                </div>
+
+                                                <div class="link linkedIn fs-2 mx-3">
+                                                    <a href="https://www.linkedin.com/company/icontechindia/"
+                                                        target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                </div>
+
+                                                <div class="link x-twitter fs-2 mx-3">
+                                                    <a
+                                                        href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4"><i
+                                                            class="fa-brands fa-twitter"></i></a>
+                                                </div>
+
+                                                <div class="link x-twitter fs-2 mx-3">
+                                                    <a
+                                                        href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4">
+                                                        <i class="fa-brands fa-x-twitter"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="dropdown-link nav-item dropdown mx-1 position-static">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Who we are?
+                                </a>
+                                <div class="nav-border"></div>
+                                <ul class="dropdown-menu w-100 rounded-0">
+                                    <li><a class="dropdown-item" href="#">About Us</a></li>
+                                    <li><a class="dropdown-item" href="#">Career</a></li>
+                                    <li><a class="dropdown-item" href="#">News and Events</a></li>
+
+                                    <div>
+                                        <div class="follow-us d-block ml-2" style="margin-top:225px ;">
+                                            <div>
+                                                <h4 class="text-light mx-3">Connect with Us</h4>
+                                            </div>
+                                            <div class="social-links d-flex align-items-center m-auto">
+                                                <div class="link facebook fs-2 mx-3">
+                                                    <a href="https://www.facebook.com/icontechin?ref=pages_you_manage"
+                                                        target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                                </div>
+
+                                                <div class="link instagram fs-2 mx-3">
+                                                    <a href="https://www.instagram.com/icontechindia/"
+                                                        target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                                </div>
+
+                                                <div class="link linkedIn fs-2 mx-3">
+                                                    <a href="https://www.linkedin.com/company/icontechindia/"
+                                                        target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                </div>
+
+                                                <div class="link x-twitter fs-2 mx-3">
+                                                    <a
+                                                        href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4"><i
+                                                            class="fa-brands fa-twitter"></i></a>
+                                                </div>
+
+                                                <div class="link x-twitter fs-2 mx-3">
+                                                    <a
+                                                        href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4">
+                                                        <i class="fa-brands fa-x-twitter"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown-link" id="contact">
+                                <a class="nav-link" href="#">Contact</a>
+                                <div class="nav-border"></div>
+                            </li>
+                        </ul>
+
+                        <div class="align-items-center justify-content-center fs-4" id="contact-globe">
+                            <li class="dropdown-link">
+                                <a class="nav-link" href=""><i class="fa-solid fa-phone mx-2"></i></a>
+                                <div class="nav-border"></div>
+                            </li>
+                            <li class="nav-item dropdown mx-2">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fa-solid fa-globe"></i>
+                                </a>
+                                <ul class="select-country dropdown-menu dropdown-menu-lg-end bg-light border rounded-0 p-1"
+                                    style="height: 177px;">
+                                    <li><a class="dropdown-item text-dark p-0" href="#">
+                                            <div class="country IND d-flex align-items-center p-2"><img
+                                                    src="images/IND_Flag.png" alt="">(English)
+                                            </div>
+                                        </a></li>
+                                    <li><a class="dropdown-item text-dark p-0" href="#">
+                                            <div class="country SA d-flex align-items-center p-2"><img
+                                                    src="images/UAE_Flag.png" alt="">(English)
+                                            </div>
+                                        </a></li>
+                                    <li><a class="dropdown-item text-dark p-0" href="#">
+                                            <div class="country UK d-flex align-items-center p-2"><img
+                                                    src="images/UK_Flag.png" alt="">(English)</div>
+                                        </a></li>
+                                </ul>
+                            </li>
+                        </div>
+
+                        <!-- <div>
+                            <div class="follow-us position-absolute bottom-0 mb-3 ">
+                                <div class="social-links d-flex justify-content-evenly align-items-center m-auto">
+                                    <div class="link facebook fs-2">
+                                        <a href="https://www.facebook.com/icontechin?ref=pages_you_manage"
+                                            target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                    </div>
+
+                                    <div class="link instagram fs-2">
+                                        <a href="https://www.instagram.com/icontechindia/" target="_blank"><i
+                                                class="fa-brands fa-instagram"></i></a>
+                                    </div>
+
+                                    <div class="link linkedIn fs-2">
+                                        <a href="https://www.linkedin.com/company/icontechindia/" target="_blank"><i
+                                                class="fa-brands fa-linkedin-in"></i></a>
+                                    </div>
+
+                                    <div class="link x-twitter fs-2">
+                                        <a href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4"><i
+                                                class="fa-brands fa-twitter"></i></a>
+                                    </div>
+
+                                    <div class="link x-twitter fs-2">
+                                        <a href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4">
+                                            <i class="fa-brands fa-x-twitter"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- image slider -->
+        <section class="slider container-fluid m-0 p-0">
+
+            <div class="sildes">
+
+                <div class="slide slide-1">
+                    <div class="image img-1"></div>
+                    <div class="slide-detail position-relative text-white">
+                        <h1>Web Development</h1>
+                        <p>Our hardworking team makes sure we satisfy our customers need in given time. Our team
+                            sketches
+                            the innovative ideas of our customers in their budget</p>
+                    </div>
+                </div>
+
+                <div class="slide slide-2 ">
+                    <div class="image img-2"></div>
+                    <div class="slide-detail position-relative text-white">
+                        <h1>Mobile App Development</h1>
+                        <p>We are a full-service mobile application development company that offers custom app and
+                            design
+                            solutions.</p>
+                    </div>
+                </div>
+
+                <div class="slide slide-3">
+                    <div class="image img-3"></div>
+                    <div class="slide-detail position-relative text-white">
+                        <h1>Digital Marketing</h1>
+                        <p>We make it sure that we turn our customers business a successful one. We keep a eye on
+                            changing
+                            trends.</p>
+                    </div>
+                </div>
+
+                <div class="slide slide-4">
+                    <div class="image img-4"></div>
+                    <div class="slide-detail position-relative text-white">
+                        <h1>Enterprise IT Solutions</h1>
+                        <p>Our Enterprise IT solutions are designed to integrate multiple facets of a company’s business
+                            through the interchange.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="dots d-flex justify-content-center align-items-center position-absolute w-100">
+                <div class="dot m-1 border border-dark rounded-3 active" onclick="changeSlideOnClick(0)"></div>
+                <div class="dot m-1 border border-dark rounded-3" onclick="changeSlideOnClick(1)"></div>
+                <div class="dot m-1 border border-dark rounded-3" onclick="changeSlideOnClick(2)"></div>
+                <div class="dot m-1 border border-dark rounded-3" onclick="changeSlideOnClick(3)"></div>
+            </div>
+
+        </section>
+
+        <!-- services section  -->
+        <div class="container my-5 services">
+
+            <div class="row justify-content-evenly p-1">
+                <div class=" service d-flex align-items-center position-relative  my-2 border p-2 col-lg-5">
+                    <div class=" mx-2">
+                        <!-- <i class="fa-solid fa-code fs-5"></i> -->
+                        <img src="images/icon-webDevelopment.png" alt="solutions" width="30px">
+                    </div>
+                    <div class="mx-2">
+                        <h3 class="m-0">Web Development</h3>
+                    </div>
+                    <div class="link position-absolute" style="right: 10px;">
+                        <a href="" class="m-0 p-1" style="color: #004581;">
+                            <i class="fa-solid fa-arrow-right fs-3"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class=" service d-flex align-items-center position-relative my-2 border p-2 col-lg-5">
+                    <div class=" mx-2">
+                        <!-- <i class="fa-solid fa-code fs-5"></i> -->
+                        <img src="images/icon-mobile-development.png" alt="solutions" width="30px">
+                    </div>
+                    <div class="mx-2">
+                        <h3 class="m-0">Mobile App Development</h3>
+                    </div>
+                    <div class="link position-absolute " style="right: 10px;">
+                        <a href="" class="m-0 p-1" style="color: #004581;">
+                            <i class="fa-solid fa-arrow-right fs-3"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-evenly p-1">
+                <div class="service d-flex align-items-center position-relative  my-2 border p-2 col-lg-5">
+                    <div class=" mx-2">
+                        <!-- <i class="fa-solid fa-database fs-5"></i> -->
+                        <img src="images/icon-digitalMarketing.png" alt="solutions" width="30px">
+                    </div>
+                    <div class="mx-2">
+                        <h3 class="m-0">Digital Marketing</h3>
+                    </div>
+                    <div class="link position-absolute" style="right: 10px;">
+                        <a href="" class="m-0 p-1" style="color: #004581;">
+                            <i class="fa-solid fa-arrow-right fs-3"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class=" service d-flex align-items-center position-relative my-2 border p-2 col-lg-5">
+                    <div class=" mx-2">
+                        <!-- <i class="fa-solid fa-code fs-5"></i> -->
+                        <img src="images/icon-ITsolutions.png" alt="solutions" width="30px">
+                    </div>
+                    <div class="mx-2">
+                        <h3 class="m-0">Enterprise IT Solutions</h3>
+                    </div>
+                    <div class="link position-absolute " style="right: 10px;">
+                        <a href="" class="m-0 p-1" style="color: #004581;">
+                            <i class="fa-solid fa-arrow-right fs-3"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- about section  -->
+        <section class="about w-100">
+            <div class="about-bg sticky-top w-100"></div>
+
+            <div class="details-bg w-100 pt-1 pb-5 " style="background: #004581;">
+                <div class="details container text-light">
+                    <div class="heading py-1">
+                        <h1>About Us</h1>
+                    </div>
+                    <div class="about-detail">
+                        <p>Icontech Projects And Services Private Limited started its INDIA operations in 2017 with a
+                            vision
+                            to provide quality IT solutions and services to its customers at affordable price. Started
+                            by an
+                            expert team of industry-experienced business professionals and IT Consultants, who saw a
+                            growing
+                            need for cost effective and flexible web and mobile app solutions and web content management
+                            softwares.
+                            <br><br>
+                            Icontech Projects And Services Private Limited today, has highly qualified, dedicated and
+                            experienced IT professionals with through technical and project management skills . The core
+                            team represents over 25 man-years of experience in the IT industry.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- solutions section  -->
+        <section class="solutions container">
+
+            <div class="heading sticky-top d-flex justify-content-center align-items-center">
+                <h1 class="text-center m-auto">Our <span style="color: #004581;">Solutions</span></h1>
+            </div>
+
+            <div class="boxes d-flex justify-content-around align-items-center flex-wrap">
+
+                <div class="box text-light overflow-hidden position-relative m-4">
+                    <div class="sol-col-1 bg-1">
+                        <div class="box-heading">
+                            <h2>Enterprise Resource Planning</h2>
+                        </div>
+                    </div>
+                    <div class="sol-col-2">
+                        <div class="extra-details">
+                            <div class="top">
+                                <h2>Enterprise Resource Planning</h2>
+                                <p>We understand that the ERP landscape is undergoing rapid change. Cloud-enabled ERP
+                                    solutions will enable you to move toward an apps-centric model to remain relevant in
+                                    today’s digital world.</p>
+                            </div>
+                            <div class="bottom">
+                                <a href="">
+                                    <div class="link">Extend<i class="fa-solid fa-angles-right rightIcon"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box text-light overflow-hidden position-relative m-4">
+                    <div class="sol-col-1 bg-2">
+                        <div class="box-heading">
+                            <h2>HR & Payroll</h2>
+                        </div>
+                    </div>
+                    <div class="sol-col-2">
+                        <div class="extra-details">
+                            <div class="top">
+                                <h2>HR & Payroll</h2>
+                                <p>Our HR & Payroll solution is an intuitive HR software suite specifically designed for
+                                    the
+                                    India market to save you time and money. Our secure cloud-based software helps
+                                    organizations of any size streamline.</p>
+                            </div>
+                            <div class="bottom">
+                                <a href="">
+                                    <div class="link">Extend<i class="fa-solid fa-angles-right rightIcon"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box text-light overflow-hidden position-relative m-4">
+                    <div class="sol-col-1 bg-3">
+                        <div class="box-heading">
+                            <h2>Customer Relationship Management</h2>
+                        </div>
+                    </div>
+                    <div class="sol-col-2">
+                        <div class="extra-details">
+                            <div class="top">
+                                <h2>Customer Relationship Management</h2>
+                                <p>Our Customer Relationship Management(CRM) solution gives your sales teams the power
+                                    to
+                                    close deals like never before with cloud-based tools that increase productivity,
+                                    keep
+                                    pipeline filled with leads, and score more wins.</p>
+                            </div>
+                            <div class="bottom">
+                                <a href="">
+                                    <div class="link">Extend<i class="fa-solid fa-angles-right rightIcon"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box text-light overflow-hidden position-relative m-4">
+                    <div class="sol-col-1 bg-4">
+                        <div class="box-heading">
+                            <h2>Hospital Management System</h2>
+                        </div>
+                    </div>
+                    <div class="sol-col-2">
+                        <div class="extra-details">
+                            <div class="top">
+                                <h2>Hospital Management System</h2>
+                                <p>Our Hospital Management System is a comprehensive and integrated Health Management
+                                    Information System designed to manage all aspects of hospital operations such as
+                                    medical, financial, administrative, legal, and compliance.</p>
+                            </div>
+                            <div class="bottom">
+                                <a href="">
+                                    <div class="link">Extend<i class="fa-solid fa-angles-right rightIcon"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box text-light overflow-hidden position-relative m-4">
+                    <div class="sol-col-1 bg-5">
+                        <div class="box-heading">
+                            <h2>Business Analytics</h2>
+                        </div>
+                    </div>
+                    <div class="sol-col-2">
+                        <div class="extra-details">
+                            <div class="top">
+                                <h2>Business Analytics</h2>
+                                <p>Our Business Analytics tool transforms data into actionable insights which enables
+                                    you to
+                                    explore with limitless visual analytics, build dashboards and perform ad hoc
+                                    analyses in
+                                    just a few clicks.</p>
+                            </div>
+                            <div class="bottom">
+                                <a href="">
+                                    <div class="link">Extend<i class="fa-solid fa-angles-right rightIcon"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box text-light overflow-hidden position-relative m-4">
+                    <div class="sol-col-1 bg-6">
+                        <div class="box-heading">
+                            <h2>Healthcare E-Learning</h2>
+                        </div>
+                    </div>
+                    <div class="sol-col-2">
+                        <div class="extra-details">
+                            <div class="top">
+                                <h2>Healthcare E-Learning</h2>
+                                <p>We offer solutions of continuous learning and career building to medical
+                                    practitioners to
+                                    aid them in treating patients satisfactorily. It has become vital today that they
+                                    keep
+                                    themselves updated with latest techniques</p>
+                            </div>
+                            <div class="bottom">
+                                <a href="">
+                                    <div class="link">Extend<i class="fa-solid fa-angles-right rightIcon"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- our customer section  -->
+        <!-- <div class="container">
+            <div class="my-3">
+                <h1 class="fs-1">Our Customer</h1>
+            </div>
+            <div class="d-flex justify-content-between align-items-center flex-wrap p-2">
+                <div class="image m-2">
+                    <img src="images/client-1.jpg" alt="client-1" width="250px" height="100px">
+                </div>
+                <div class="image m-2">
+                    <img src="images/client-2.jpg" alt="client-2" width="250px" height="100px">
+                </div>
+                <div class="image m-2">
+                    <img src="images/client-3.png" alt="client-3" width="250px" height="100px">
+                </div>
+                <div class="image m-2">
+                    <img src="images/client-4.jpg" alt="client-4" width="250px" height="100px">
+                </div>
+            </div>
+        </div> -->
+
+
+        <!-- connect with us section -->
+        <section class='connect bg-warning text-light p-2'>
+            <div class="content container py-4">
+                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                    <div class="question ">
+                        <p class="m-0">ARE YOU READY TO WORK WITH US?</p>
+                        <h1 class="fs-1">START YOUR PROJECT WITH ICONTECH?</h1>
+                    </div>
+                    <div class="button">
+                        <a href="pages/ConnectWithUs.html"><button class="my-2 fs-5 rounded-5">Connect with
+                                Us</button></a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- footer section  -->
+    <footer style="background: #004581;">
+
+        <div class="Footer text-light container py-4">
+            <div class="row">
+                <div class="boxes Solution col-lg-4 my-2">
+                    <div class="heading">
+                        <h2>Our <span class="text-warning">Solution</span></h2>
+                    </div>
+                    <div class="list">
+                        <ul class="m-0 p-0">
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="pages/EnterpriseResourcePlanning.html">
+                                    Enterprise Resource Planning
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="pages/HRandPayroll.html">
+                                    HR and Payroll
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="pages/CustomerRelationshipManagement.html">
+                                    Customer Relationship Management
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="pages/HospitalManagementSystem.html">
+                                    Hospital Management System
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="pages/BussinessAnalytics.html">
+                                    Business Analytics
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="pages/HealthcareELearning.html">
+                                    Healthcare E-Learning
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="boxes Services col-lg-4 my-2">
+                    <div class="heading">
+                        <h2>Our <span class="text-warning">Services</span></h2>
+                    </div>
+                    <div class="list">
+                        <ul class="m-0 p-0">
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="pages/WebDevelopment.html">
+                                    Web Development
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="pages/MobileAppDevelopment.html">
+                                    Mobile App Development
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="pages/DigitalMarketing.html">
+                                    Digital Marketing
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="pages/EnterpriseITSolutions.html">
+                                    Enterprise IT Solutions
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="pages/Training.html">
+                                    Training
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="boxes Address col-lg-4 my-2">
+                    <div class="heading">
+                        <h2><span class="text-warning">Contact</span></h2>
+                    </div>
+                    <div class="list">
+                        <li class="my-3">
+                            <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                            <a href="" class="my-2 p-0">
+                                C-89, Vibhuti Khand Gomti Nagar, Lucknow - 226010
+                            </a>
+                        </li>
+
+                        <li class="my-3">
+                            <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                            <a href="" class="my-2 p-0">
+                                Phone: +91 522 351 7741
+                            </a>
+                        </li>
+
+                        <li class="my-3">
+                            <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                            <a href="" class="my-2 p-0">
+                                info@icontechindia.com
+                            </a>
+                        </li>
+
+                        <iframe class="map my-2"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14236.247269521054!2d80.999127!3d26.869777!3m2!1i1024!2i768!4f12.1!3m3!1m2!1s0x399be3ddcd6412e3%3A0x91d7053bb5b9757e!2sICONTECH!5e0!3m2!1sen!2sin!4v1727878978202!5m2!1sen!2sin"
+                            style="border-radius: 6px; border : 1px solid white;" width="300px" loading="lazy"></iframe>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="m-0 text-white border-2">
+
+        <div class='text-center p-3'>
+            <p class="mb-0 py-2 text-warning">Copyright © Icontech 2022. All rights reserved.</p>
+        </div>
+
+        <div class="goToTop" style="display: none;" onclick="goToTop()">
+            <div class="bg-danger d-flex justify-content-center align-items-center rounded-5 border text-light position-fixed"
+                style="height: 50px; width: 50px;bottom: 30px;right: 30px;cursor: pointer;">
+                <i class="fa-solid fa-chevron-up"></i>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- bootstrap cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- fontawsome cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
+        integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- my js  -->
+    <script src="index.js"></script>
+</body>
+
+</html>
