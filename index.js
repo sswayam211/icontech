@@ -1,19 +1,39 @@
 // header section js -----------------------------------------------------------------------------------------------------------------------------------------------------------
 let header = document.querySelector("header");
-// console.log(header.offsetHeight);
 let prevScroll = header.offsetHeight;
+
 window.addEventListener("scroll", () => {
     let currScroll = window.scrollY;
     if (currScroll < prevScroll) {
         // console.log("scroll down");
         header.style.transform = "none";
+        header.style.boxShadow = "0px 0px 10px";
+
+        // changing scrollbar color 
+        document.head.insertAdjacentHTML("beforeend", `
+            <style>
+            body::-webkit-scrollbar-thumb { background:linear-gradient(0deg, transparent, #004581, #004581); }
+            </style>
+          `);
     } else if (currScroll > prevScroll) {
         // console.log("scroll upp");
         header.style.transform = "translateY(-100%)";
+        header.style.boxShadow = "0px 0px 0px";
+
+        // changing scrollbar color 
+        document.head.insertAdjacentHTML("beforeend", `
+            <style>
+            body::-webkit-scrollbar-thumb { background: linear-gradient(0deg, #004581, #004581, transparent);}
+            </style>
+          `);
     }
-    if (currScroll > header.offsetHeight/2) {
+    if (currScroll > header.offsetHeight) {
         prevScroll = currScroll;
     }
+    if (currScroll <= header.offsetHeight) {
+        header.style.boxShadow = "0px 0px 0px";
+    }
+
 });
 
 
@@ -31,7 +51,6 @@ let slideInterval = 5000; // change slide after every 5s
 function changeSlideOnClick(x) {
     count = x;
     changeSlides(count);
-    // count++;
 }
 
 function changeSlides(x) {
