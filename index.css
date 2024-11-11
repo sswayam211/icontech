@@ -2,6 +2,31 @@ li {
     list-style: none;
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #e0e0e0;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+
+/* above header  */
+.above-header .dropdown-item {
+    color: white;
+}
+
+.above-header .dropdown-item:hover {
+    color: black;
+}
+
+@media only screen and (max-width: 768px) {
+    .above-header {
+        display: none;
+    }
+}
+
 /* header section  */
 header {
     overflow-x: hidden;
@@ -21,7 +46,7 @@ header::-webkit-scrollbar {
     height: 50px;
 }
 
-.dropdown-menu {
+header .dropdown-menu {
     left: 0px;
     top: 90%;
     background: #000000d6;
@@ -32,7 +57,7 @@ header::-webkit-scrollbar {
         overflow: visible;
     }
 
-    .dropdown-menu {
+    header .dropdown-menu {
         left: 0px;
         top: 90%;
         display: block;
@@ -44,38 +69,38 @@ header::-webkit-scrollbar {
         background: #000000d6;
     }
 
-    .dropdown-link:hover .dropdown-menu {
+    header .dropdown-link:hover .dropdown-menu {
         /* display: block; */
         padding: 8px 0px;
         height: 450px;
     }
 
-    .select-country {
+    header .select-country {
         display: none;
     }
 }
 
-.nav-link {
+header .nav-link {
     padding: 20px 0px;
 }
 
-.nav-border {
+header .nav-border {
     width: 0%;
     position: relative;
     top: 0px;
     transition: width .3s ease;
 }
 
-.dropdown-link:hover .nav-border {
+header .dropdown-link:hover .nav-border {
     width: 100%;
     border: 2px solid #66a9c7;
 }
 
-.dropdown-link:hover .nav-link {
+header .dropdown-link:hover .nav-link {
     color: #66a9c7;
 }
 
-.dropdown-item {
+header .dropdown-item {
     color: white;
     margin: 10px 0px;
 }
@@ -84,15 +109,15 @@ header #contact {
     display: none;
 }
 
-#contact-globe {
+header #contact-globe {
     display: flex;
 }
 
-.country:hover {
+header .country:hover {
     background-color: #e1e1e1;
 }
 
-.country img {
+header .country img {
     width: 50px;
 }
 
@@ -116,7 +141,7 @@ header #contact {
         display: block;
     }
 
-    #contact-globe {
+    header #contact-globe {
         display: none;
     }
 
@@ -251,7 +276,7 @@ header #contact {
 
 @media only screen and (max-width: 600px) {
     .logo-img img {
-        height: 50px;
+        height: 60px;
     }
 
     .slider .sildes .slide .slide-detail {
@@ -269,11 +294,6 @@ header #contact {
 }
 
 /* services section css  */
-.services .service {
-    cursor: default;
-    background: white;
-}
-
 .services .link {
     transition: all .5s ease;
     transform: translateX(-20px);
@@ -538,7 +558,7 @@ header #contact {
 .connect .content .button button {
     color: black;
     background-color: white;
-    width: 200px;
+    width: 150px;
     height: 55px;
     border: none;
     transition: color .5s ease, background .5s ease;
