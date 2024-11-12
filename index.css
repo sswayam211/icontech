@@ -88,7 +88,8 @@ header .nav-border {
     width: 0%;
     position: relative;
     top: 0px;
-    transition: width .3s ease;
+    transition: all .3s linear;
+    border: 2px solid  white;
 }
 
 header .dropdown-link:hover .nav-border {
