@@ -6,6 +6,16 @@ a {
     text-decoration: none;
 }
 
+body {
+    font-family: "Poppins", sans-serif;
+    /* font-weight: 100; */
+    font-style: normal;
+    transition: all .3s linear;
+    opacity: 0;
+    visibility: hidden;
+    background: black;
+}
+
 body::-webkit-scrollbar {
     width: 10px;
     background-color: #e0e0e0;
@@ -15,14 +25,18 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
 }
 
-body {
-    font-family: "Poppins", sans-serif;
-    /* font-weight: 100; */
-    font-style: normal;
-}
-
 
 /* above header  */
+.above-header .above-header-link {
+    /* color:rgb(66, 66, 66); */
+    color: black;
+}
+
+.above-header .above-header-link:hover {
+    color: #66a9c7;
+    font-weight: bold;
+}
+
 .above-header .dropdown-item {
     color: white;
 }
@@ -92,7 +106,9 @@ header .dropdown-menu {
 }
 
 header .nav-link {
+    color: black;
     padding: 20px 0px;
+    font-size: 17px;
 }
 
 header .nav-border {
@@ -118,7 +134,7 @@ header .dropdown-item {
 }
 
 header #contact {
-    display: none;
+    /* display: none; */
 }
 
 header #contact-globe {
@@ -161,8 +177,6 @@ header .country img {
         display: block;
     } */
 }
-
-
 
 
 /* slider section  */
@@ -229,7 +243,7 @@ header .country img {
 }
 
 .slider .dots {
-    bottom: 3%;
+    bottom: 10%;
 }
 
 .slider .dots .dot {
@@ -320,38 +334,18 @@ header .country img {
 
 
 /* about section css  */
-.about {
-    height: 200vh;
-}
-
 .about .about-bg {
-    height: 100vh;
     background: url("images/About-background2.jpg");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
+    padding: 100px 0px;
 }
 
 .about .details .heading h1 {
-    font-size: 70px;
+    font-size: 50px;
 }
-
-@media only screen and (max-width: 420px) {
-    .about .details .heading h1 {
-        font-size: 60px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .about .about-bg {
-        background: url("images/About-background.jpg");
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-}
-
 
 /* solution section css  */
 .solutions {
@@ -364,7 +358,9 @@ header .country img {
 }
 
 .solutions .heading h1 {
+    opacity: 1;
     font-size: 100px;
+    transition: all .3s linear;
 }
 
 .solutions .animation img:nth-child(1) {
@@ -476,7 +472,7 @@ header .country img {
 
 
 .solutions .boxes {
-    padding-bottom: 100vh;
+    padding-bottom: 130px;
 }
 
 .solutions .boxes .box:nth-child(1) {
@@ -517,13 +513,13 @@ header .country img {
 }
 
 .bg-3 {
-    background: url("images/solution-CRM.jpg");
+    background: url("images/solution-CRM.avif");
     background-position: center;
     background-size: 330px 440px;
 }
 
 .bg-4 {
-    background: url("images/solutions-HMS.jpg");
+    background: url("images/solutions-HMS2.jpg");
     background-position: center;
     background-size: 330px 440px;
 }
@@ -676,8 +672,9 @@ header .country img {
 }
 
 /* customer section css  */
-
-
+.image {
+    transition: all .3s linear;
+}
 
 /* connect withus section  */
 .connect .content .button button {
