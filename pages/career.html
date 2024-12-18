@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career</title>
+
+    <!-- bootstrap cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <!-- fontawsome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- google fonts links  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sarpanch:wght@400;500;600;700;800;900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- my css  -->
+    <link rel="stylesheet" href="../index.css">
+
+    <style>
+        main {
+            font-family: 'poppins';
+            color: rgb(65, 62, 62);
+        }
+
+        .subheading a:hover {
+            text-decoration: underline;
+        }
+
+        .body-link {
+            color: #009be6;
+        }
+
+        .body-link:hover {
+            color: #003188;
+        }
+
+        .poppins {
+            font-family: "Poppins", sans-serif;
+            /* font-weight: 100; */
+            font-style: normal;
+        }
+
+        .details-list:hover button {
+            color: #003188;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="above-header">
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-between" style="font-size: 15px;">
+                <div class="col-md-8 d-flex">
+                    <a href="mailto:info@icontechindia.com" class="above-header-link text-decoration-none px-2 border-end border-2">
+                        <p class="m-0 d-inline">Email: info@icontechindia.com</p>
+                    </a>
+                    <a href="tel:+915223517741" class="above-header-link text-decoration-none px-2">
+                        <p class="m-0 d-inline"> Call Us Now: +91 522 351 7741</p>
+                    </a>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="dropdown d-inline">
+                        <a class="btn btn-danger rounded-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 15px;">
+                            <i class="fa-regular fa-user"></i> Login
+                        </a>
+
+                        <ul class="dropdown-menu bg-dark text-light rounded-0" aria-labelledby="dropdownMenuLink"
+                            style="z-index: 2000;">
+                            <li><a class="dropdown-item" href="../pages/login-employee.html">Employee</a></li>
+                            <li><a class="dropdown-item" href="../pages/login-customer.html">Customer</a></li>
+                        </ul>
+                    </div>
+
+                    <a href="../pages/getquote.html"><button type="button" class="btn btn-danger rounded-0" style="font-size: 15px;"> <i
+                                class="fa-solid fa-magnifying-glass"></i>
+                            Get Quote</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="m-0 p-0">
+
+    <!-- navbar  -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container-fluid p-0 px-sm-2">
+                <a class="navbar-brand" href="../index.html">
+                    <div class="logo-img "><img class="img-fluid" src="../images/logo.png" alt=""></div>
+                </a>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <div class="navBtn d-flex flex-column my-1">
+                        <div class="bar1 my-1 rounded-3"
+                            style="width: 15px;border: 2px solid #0c0c0cd6;margin-left: 13px;"></div>
+                        <div class="bar2 my-1 rounded-3" style="width: 28px;border: 2px solid #0c0c0cd6;"></div>
+                    </div>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <a class="navbar-brand" href="../index.html">
+                            <div class="logo-img "><img src="../images/logo.png" alt=""></div>
+                        </a>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav m-auto mt-0 mb-lg-0 text-center align-items-center">
+                            <li class="dropdown-link nav-item dropdown mx-1">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    What We Do
+                                </a>
+                                <div class="nav-border"></div>
+                                <ul class="dropdown-menu rounded-0 ">
+                                    <li><a class="dropdown-item" href="../pages/webdevelopment.html">Web Development</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="../pages/mobileappdevelopment.html">Mobile App
+                                            Development
+                                        </a></li>
+                                    <li><a class="dropdown-item" href="../pages/digitalmarketing.html">Digital
+                                            Marketing</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="../pages/enterpriseitsolutions.html">Enterprise IT
+                                            Solutions
+                                        </a></li>
+                                    <li><a class="dropdown-item" href="../pages/training.html">Training</a></li>
+
+                                    <div>
+                                        <div class="follow-us d-block ml-2" style="margin-top:140px ;">
+                                            <div>
+                                                <h4 class="text-light mx-3">Connect with Us</h4>
+                                            </div>
+                                            <div class="social-links d-flex align-items-center m-auto">
+                                                <div class="link facebook fs-2 mx-3">
+                                                    <a href="https://www.facebook.com/icontechin?ref=pages_you_manage"
+                                                        target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                                </div>
+
+                                                <div class="link instagram fs-2 mx-3">
+                                                    <a href="https://www.instagram.com/icontechindia/"
+                                                        target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                                </div>
+
+                                                <div class="link linkedIn fs-2 mx-3">
+                                                    <a href="https://www.linkedin.com/company/icontechindia/"
+                                                        target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                </div>
+
+                                                <div class="link x-twitter fs-2 mx-3">
+                                                    <a
+                                                        href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4"><i
+                                                            class="fa-brands fa-twitter"></i></a>
+                                                </div>
+
+                                                <div class="link x-twitter fs-2 mx-3">
+                                                    <a
+                                                        href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4">
+                                                        <i class="fa-brands fa-x-twitter"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="dropdown-link nav-item dropdown mx-1">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Our Solutions
+                                </a>
+                                <div class="nav-border"></div>
+                                <ul class="dropdown-menu rounded-0">
+                                    <li><a class="dropdown-item" href="../pages/enterpriseresourseplanning.html">Enterprise
+                                            Resource Planning</a></li>
+                                    <li><a class="dropdown-item" href="../pages/hrandpayrolls.html">HR and Payroll</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="../pages/customerrelationshipmanagement.html">Customer Relationship
+                                            Management</a></li>
+                                    <li><a class="dropdown-item" href="../pages/hospitalmanagementsystem.html">Hospital
+                                            Management System</a></li>
+                                    <li><a class="dropdown-item" href="../pages/businessanalytics.html">Bussiness
+                                            Analytics</a></li>
+                                    <li><a class="dropdown-item" href="../pages/healthcareE-learning.html">Healthcare
+                                            E-Learning</a></li>
+                                    <div>
+                                        <div class="follow-us d-block ml-2" style="margin-top:100px ;">
+                                            <div>
+                                                <h4 class="text-light mx-3">Connect with Us</h4>
+                                            </div>
+                                            <div class="social-links d-flex align-items-center m-auto">
+                                                <div class="link facebook fs-2 mx-3">
+                                                    <a href="https://www.facebook.com/icontechin?ref=pages_you_manage"
+                                                        target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                                </div>
+
+                                                <div class="link instagram fs-2 mx-3">
+                                                    <a href="https://www.instagram.com/icontechindia/"
+                                                        target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                                </div>
+
+                                                <div class="link linkedIn fs-2 mx-3">
+                                                    <a href="https://www.linkedin.com/company/icontechindia/"
+                                                        target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                </div>
+
+                                                <div class="link x-twitter fs-2 mx-3">
+                                                    <a
+                                                        href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4"><i
+                                                            class="fa-brands fa-twitter"></i></a>
+                                                </div>
+
+                                                <div class="link x-twitter fs-2 mx-3">
+                                                    <a
+                                                        href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4">
+                                                        <i class="fa-brands fa-x-twitter"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="dropdown-link nav-item dropdown mx-1 ">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Who We Are
+                                </a>
+                                <div class="nav-border"></div>
+                                <ul class="dropdown-menu rounded-0">
+                                    <li><a class="dropdown-item" href="../pages/aboutus.html">About Us</a></li>
+                                    <li><a class="dropdown-item" href="../pages/career.html">Career</a></li>
+                                    <li><a class="dropdown-item" href="../pages/newsandevents.html">News and Events</a>
+                                    </li>
+
+                                    <div>
+                                        <div class="follow-us d-block ml-2" style="margin-top:225px ;">
+                                            <div>
+                                                <h4 class="text-light mx-3">Connect with Us</h4>
+                                            </div>
+                                            <div class="social-links d-flex align-items-center m-auto">
+                                                <div class="link facebook fs-2 mx-3">
+                                                    <a href="https://www.facebook.com/icontechin?ref=pages_you_manage"
+                                                        target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                                </div>
+
+                                                <div class="link instagram fs-2 mx-3">
+                                                    <a href="https://www.instagram.com/icontechindia/"
+                                                        target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                                </div>
+
+                                                <div class="link linkedIn fs-2 mx-3">
+                                                    <a href="https://www.linkedin.com/company/icontechindia/"
+                                                        target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                </div>
+
+                                                <div class="link x-twitter fs-2 mx-3">
+                                                    <a
+                                                        href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4"><i
+                                                            class="fa-brands fa-twitter"></i></a>
+                                                </div>
+
+                                                <div class="link x-twitter fs-2 mx-3">
+                                                    <a
+                                                        href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4">
+                                                        <i class="fa-brands fa-x-twitter"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown-link" id="contact">
+                                <a class="nav-link" href="../pages/contact.html">Contact</a>
+                                <div class="nav-border"></div>
+                            </li>
+                        </ul>
+
+                        <div class="align-items-center justify-content-center fs-4" id="contact-globe">
+                            <li class="dropdown-link">
+                                <a class="nav-link fs-4" href="tel:+915223517741"><i class="fa-solid fa-phone mx-2"></i></a>
+                                <div class="nav-border"></div>
+                            </li>
+                            <li class="nav-item dropdown mx-2">
+                                <a class="nav-link fs-4 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fa-solid fa-globe"></i>
+                                </a>
+                                <ul class="select-country dropdown-menu dropdown-menu-lg-end bg-light border rounded-0 p-1"
+                                    style="height: 177px;">
+                                    <li><a class="dropdown-item text-dark p-0" href="#">
+                                            <div class="country IND d-flex align-items-center p-2"><img
+                                                    src="images/IND_Flag.png" alt="">(English)
+                                            </div>
+                                        </a></li>
+                                    <li><a class="dropdown-item text-dark p-0" href="https://it-pro-me.com/" target="_blank">
+                                            <div class="country SA d-flex align-items-center p-2"><img
+                                                    src="../images/UAE_Flag.png" alt="">(English)
+                                            </div>
+                                        </a></li>
+                                    <li><a class="dropdown-item text-dark p-0" href="https://it-pro-me.com/" target="_blank">
+                                            <div class="country UK d-flex align-items-center p-2"><img
+                                                    src="../images/UK_Flag.png" alt="">(English)</div>
+                                        </a></li>
+                                </ul>
+                            </li>
+                        </div>
+
+                        <!-- <div>
+                            <div class="follow-us position-absolute bottom-0 mb-3 ">
+                                <div class="social-links d-flex justify-content-evenly align-items-center m-auto">
+                                    <div class="link facebook fs-2">
+                                        <a href="https://www.facebook.com/icontechin?ref=pages_you_manage"
+                                            target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                    </div>
+
+                                    <div class="link instagram fs-2">
+                                        <a href="https://www.instagram.com/icontechindia/" target="_blank"><i
+                                                class="fa-brands fa-instagram"></i></a>
+                                    </div>
+
+                                    <div class="link linkedIn fs-2">
+                                        <a href="https://www.linkedin.com/company/icontechindia/" target="_blank"><i
+                                                class="fa-brands fa-linkedin-in"></i></a>
+                                    </div>
+
+                                    <div class="link x-twitter fs-2">
+                                        <a href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4"><i
+                                                class="fa-brands fa-twitter"></i></a>
+                                    </div>
+
+                                    <div class="link x-twitter fs-2">
+                                        <a href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4">
+                                            <i class="fa-brands fa-x-twitter"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="poppins ">
+
+        <div class="w-100 position-relative"
+            style="height: 225px; background: url('../images/pages-career-banner.png');background-position: center; background-repeat: no-repeat; background-size: cover;">
+            <div class="w-100 h-100 position-absolute " style="background-color: rgba(0, 0, 0, 0.38);z-index: 2;">
+            </div>
+            <div class="container position-relative d-flex justify-content-center flex-column h-100 text-light p-sm-5 text-center"
+                style="z-index: 10;">
+                <div class="heading ">
+                    <h1 class="fw-bold">Career</h1>
+                </div>
+                <div class="subheading">
+                    <p style="font-size: 12px;"><a class="text-light" href="../index.html">HOME</a> / Career
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="p-md-5 py-5">
+                <div>
+                    <h2>Apply For Jobs</h2>
+                    <p>We need your ideas and purposefulness. Because we develop innovative software, which will
+                        considerably change the future of enterprises and markets. This is the way it has been and the
+                        way it should be in future. We need the best. We need you. Your applications are always welcome.
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7 p-2">
+                        <div class="border p-3 shadow">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap m-3">
+                                <div class="">
+                                    <h5>Select Position to Apply for</h5>
+                                </div>
+                                <div class="my-1">
+                                    <select class="form-select p-1 bg-light" name="jobposition" id="jobposition"
+                                        aria-label="Default select example">
+                                        <option selected>----Select Position----</option>
+                                        <option value="Web Designing and Development">Web Designing and Development
+                                        </option>
+                                        <option value="Mobile App Development">Mobile App Development</option>
+                                        <option value="Digital Marketing">Digital Marketing</option>
+                                        <option value="Enterprise IT Solutions">Enterprise IT Solutions</option>
+                                        <option value="Training">Training</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p class="details-list d-inline-flex gap-1 w-100">
+                                    <button class="btn border-0 w-100" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#target-1" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                        <div class="bg-light border border-2 rounded-5 p-2 px-3 w-100 text-start">
+                                            <i class="fa-solid fa-plus fs-5"></i>
+                                            <h5 class="m-0 d-inline">Personal Details</h5>
+                                        </div>
+                                    </button>
+                                </p>
+                                <div class="collapse" id="target-1">
+                                    <div class="card card-body border-0 pt-0">
+
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">Full Name</label>
+                                                <input type="text" class="form-control" id="name"
+                                                    placeholder="as per legal documents(e.g. same as Adhar Card)">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="email"
+                                                    placeholder="Enter your email">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="phone" class="form-label">Phone Number</label>
+                                                <input type="number" class="form-control" id="phone"
+                                                    placeholder="Enter your number so that we can give you a call!">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="dob" class="form-label">Date Of Birth</label>
+                                                <input type="date" class="form-control" id="name"
+                                                    placeholder="dd-mm-yyyy">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="gender" class="form-label">Gender</label>
+                                                <div>
+                                                    <input class="form-check-input" type="radio" name="gender"
+                                                        id="gender">
+                                                    <label class="form-check-label" for="gender">
+                                                        Male
+                                                    </label>
+                                                    <input class="form-check-input" type="radio" name="gender"
+                                                        id="gender">
+                                                    <label class="form-check-label" for="gender">
+                                                        Female
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <h4 class="my-2 mt-4">Current Address</h4>
+                                                <div class="mb-3">
+                                                    <label for="address" class="form-label">Address</label>
+                                                    <input type="text" class="form-control" id="address"
+                                                        placeholder="Where do you live?">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="mb-3">
+                                                            <label for="country" class="form-label">Country</label>
+                                                            <input type="text" class="form-control" id="country"
+                                                                placeholder="Country">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="mb-3">
+                                                            <label for="state" class="form-label">State</label>
+                                                            <input type="text" class="form-control" id="state"
+                                                                placeholder="State">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="mb-3">
+                                                            <label for="city" class="form-label">City</label>
+                                                            <input type="text" class="form-control" id="city"
+                                                                placeholder="Country">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="mb-3">
+                                                            <label for="areacode" class="form-label">ZIP/ Postal
+                                                                Code</label>
+                                                            <input type="text" class="form-control" id="state"
+                                                                placeholder="Zip Code">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h4 class="my-2 mt-4">Permanent Address</h4>
+                                                <div class="mb-3">
+                                                    <label for="address" class="form-label">Address</label>
+                                                    <input type="text" class="form-control" id="address"
+                                                        placeholder="Where do you live?">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="mb-3">
+                                                            <label for="country" class="form-label">Country</label>
+                                                            <input type="text" class="form-control" id="country"
+                                                                placeholder="Country">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="mb-3">
+                                                            <label for="state" class="form-label">State</label>
+                                                            <input type="text" class="form-control" id="state"
+                                                                placeholder="State">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="mb-3">
+                                                            <label for="city" class="form-label">City</label>
+                                                            <input type="text" class="form-control" id="city"
+                                                                placeholder="Country">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="mb-3">
+                                                            <label for="areacode" class="form-label">ZIP/ Postal
+                                                                Code</label>
+                                                            <input type="text" class="form-control" id="state"
+                                                                placeholder="Zip Code">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+                                </div>
+
+                                <p class="details-list d-inline-flex gap-1 w-100">
+                                    <button class="btn border-0 w-100" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#target-2" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                        <div class="bg-light border border-2 rounded-5 p-2 px-3 w-100 text-start">
+                                            <i class="fa-solid fa-plus fs-5"></i>
+                                            <h5 class="m-0 d-inline">Education & Qualification</h5>
+                                        </div>
+                                    </button>
+                                </p>
+                                <div class="collapse" id="target-2">
+                                    <div class="card card-body border-0 pt-0">
+
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">Graduation - School/Umiversity
+                                                    Name/Degree</label>
+                                                <input type="text" class="form-control" id="graduation-degree"
+                                                    placeholder="University Name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">Post Graduation - School/Umiversity
+                                                    Name/Degree</label>
+                                                <input type="text" class="form-control" id="post-graduation-degree"
+                                                    placeholder="University Name For Gratuation">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">PPG Course - School/Umiversity
+                                                    Name/Degree</label>
+                                                <input type="text" class="form-control" id="ppg-course"
+                                                    placeholder="University Name for PPG Course">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">Professional Certificate /
+                                                    Skills(If Any)</label>
+                                                <input type="text" class="form-control" id="professional-certificate"
+                                                    placeholder="Professional Certificate / Skills (If Any)">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <p class="details-list d-inline-flex gap-1 w-100">
+                                    <button class="btn border-0 w-100" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#target-3" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                        <div class="bg-light border border-2 rounded-5 p-2 px-3 w-100 text-start">
+                                            <i class="fa-solid fa-plus fs-5"></i>
+                                            <h5 class="m-0 d-inline">Work Experience</h5>
+                                        </div>
+                                    </button>
+                                </p>
+                                <div class="collapse" id="target-3">
+                                    <div class="card card-body border-0 pt-0">
+
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="experience" class="form-label">Experience</label>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <select class="p-2 w-100 m-1 border" name="experience-year"
+                                                        id="experience-year">
+                                                        <option value="">Years</option>
+                                                        <option value="">Fresher</option>
+                                                        <option value="">1 Years</option>
+                                                        <option value="">2 Years</option>
+                                                        <option value="">3 Years</option>
+                                                        <option value="">4 Years</option>
+                                                        <option value="">5 Years</option>
+                                                        <option value="">6 Years</option>
+                                                        <option value="">7 Years</option>
+                                                        <option value="">8 Years</option>
+                                                        <option value="">9 Years</option>
+                                                        <option value="">10 Years</option>
+                                                        <option value="">11 Years</option>
+                                                        <option value="">12 Years</option>
+                                                        <option value="">13 Years</option>
+                                                        <option value="">14 Years</option>
+                                                        <option value="">15 Years</option>
+                                                        <option value="">16 Years</option>
+                                                        <option value="">17 Years</option>
+                                                        <option value="">18 Years</option>
+                                                        <option value="">19 Years</option>
+                                                        <option value="">20 Years</option>
+                                                    </select>
+                                                    <select class="p-2 w-100 m-1 border" name="experience-year"
+                                                        id="experience-year">
+                                                        <option value="">Months</option>
+                                                        <option value="">0 Months</option>
+                                                        <option value="">1 Months</option>
+                                                        <option value="">2 Months</option>
+                                                        <option value="">3 Months</option>
+                                                        <option value="">4 Months</option>
+                                                        <option value="">5 Months</option>
+                                                        <option value="">6 Months</option>
+                                                        <option value="">7 Months</option>
+                                                        <option value="">8 Months</option>
+                                                        <option value="">9 Months</option>
+                                                        <option value="">10 Months</option>
+                                                        <option value="">11 Months</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="Employer name" class="form-label">Employer Name</label>
+                                                <input type="text" class="form-control" id="employer-name"
+                                                    placeholder="What is the name of company?">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">Job Title</label>
+                                                <input type="text" class="form-control" id="job-title"
+                                                    placeholder="What is the job title?">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="salary" class="form-label">Current Salary</label>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <select class="p-2 w-100 m-1 border" name="experience-year"
+                                                        id="experience-year">
+                                                        <option value="">Lacs</option>
+                                                        <option value="">1 Lacs</option>
+                                                        <option value="">2 Lacs</option>
+                                                        <option value="">3 Lacs</option>
+                                                        <option value="">4 Lacs</option>
+                                                        <option value="">5 Lacs</option>
+                                                        <option value="">6 Lacs</option>
+                                                        <option value="">7 Lacs</option>
+                                                        <option value="">8 Lacs</option>
+                                                        <option value="">9 Lacs</option>
+                                                        <option value="">10 Lacs</option>
+                                                        <option value="">11 Lacs</option>
+                                                        <option value="">12 Lacs</option>
+                                                        <option value="">13 Lacs</option>
+                                                        <option value="">14 Lacs</option>
+                                                        <option value="">15 Lacs</option>
+                                                        <option value="">16 Lacs</option>
+                                                        <option value="">17 Lacs</option>
+                                                        <option value="">18 Lacs</option>
+                                                        <option value="">19 Lacs</option>
+                                                        <option value="">20 Lacs</option>
+                                                    </select>
+                                                    <select class="p-2 w-100 m-1 border" name="experience-year"
+                                                        id="experience-year">
+                                                        <option value="">Thousands</option>
+                                                        <option value="">1 Thousands</option>
+                                                        <option value="">2 Thousands</option>
+                                                        <option value="">3 Thousands</option>
+                                                        <option value="">4 Thousands</option>
+                                                        <option value="">5 Thousands</option>
+                                                        <option value="">6 Thousands</option>
+                                                        <option value="">7 Thousands</option>
+                                                        <option value="">8 Thousands</option>
+                                                        <option value="">9 Thousands</option>
+                                                        <option value="">10 Thousands</option>
+                                                        <option value="">11 Thousands</option>
+                                                        <option value="">12 Thousands</option>
+                                                        <option value="">13 Thousands</option>
+                                                        <option value="">14 Thousands</option>
+                                                        <option value="">15 Thousands</option>
+                                                        <option value="">16 Thousands</option>
+                                                        <option value="">17 Thousands</option>
+                                                        <option value="">18 Thousands</option>
+                                                        <option value="">19 Thousands</option>
+                                                        <option value="">20 Thousands</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <p class="details-list d-inline-flex gap-1 w-100">
+                                    <button class="btn border-0 w-100" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#target-4" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                        <div class="bg-light border border-2 rounded-5 p-2 px-3 w-100 text-start">
+                                            <i class="fa-solid fa-plus fs-5"></i>
+                                            <h5 class="m-0 d-inline">Education & Qualification</h5>
+                                        </div>
+                                    </button>
+                                </p>
+                                <div class="collapse" id="target-4">
+                                    <div class="card card-body border-0 pt-0">
+
+                                        <form>
+                                            <div class="form-group mb-3">
+                                                <label for="portfolio-link">Website/Posrtfolio Link(optional)</label>
+                                                <input type="file" class="form-control-file my-1 d-block" id="portfolio-link">
+                                            </div>
+
+                                            <div class="form-group my-3">
+                                                <label for="resume">Uploade Resume</label>
+                                                <input type="file" class="form-control-file my-1 d-block" id="resume">
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">Cover Letter</label>
+                                                <textarea type="text" class="form-control" id="cover-letter"
+                                                    placeholder="Write to us why should we choose you?" style="height: 100px;"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="d-inline-flex gap-1 w-100 p-2 px-3">
+                                    <Button type="submit" class="btn btn-danger p-2 px-4 rounded-5">Submit</Button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <a href="../pages/webdevelopment.html"><img class="img-fluid"
+                                src="../images/pages-career-image-1.png" alt=""></a>
+                        <a href="../pages/mobileappdevelopment.html"><img class="img-fluid"
+                                src="../images/pages-career-image-2.png" alt=""></a>
+                        <a href="../pages/digitalmarketing.html"><img class="img-fluid"
+                                src="../images/pages-career-image-3.png" alt=""></a>
+                        <a href="../pages/enterpriseitsolutions.html"><img class="img-fluid"
+                                src="../images/pages-career-image-4.png" alt=""></a>
+                        <a href="../pages/training.html"><img class="img-fluid" src="../images/pages-career-image-5.png"
+                                alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+
+
+    <!-- footer section  -->
+    <footer style="background: #004581;">
+
+        <div class="Footer text-light container py-4">
+            <div class="row">
+                <div class="boxes Solution col-lg-4 col-md-6 my-2">
+                    <div class="heading">
+                        <h2>Our <span class="text-warning">Solution</span></h2>
+                    </div>
+                    <div class="list">
+                        <ul class="m-0 p-0">
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="../pages/enterpriseresourseplanning.html">
+                                    Enterprise Resource Planning
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="../pages/hrandpayrolls.html">
+                                    HR and Payroll
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="../pages/customerrelationshipmanagement.html">
+                                    Customer Relationship Management
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="../pages/hospitalmanagementsystem.html">
+                                    Hospital Management System
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="../pages/businessanalytics.html">
+                                    Business Analytics
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="../pages/healthcareE-learning.html">
+                                    Healthcare E-Learning
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="boxes Services col-lg-4 col-md-6 my-2">
+                    <div class="heading">
+                        <h2>Our <span class="text-warning">Services</span></h2>
+                    </div>
+                    <div class="list">
+                        <ul class="m-0 p-0">
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="../pages/webdevelopment.html">
+                                    Web Development
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="../pages/mobileappdevelopment.html">
+                                    Mobile App Development
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="../pages/digitalmarketing.html">
+                                    Digital Marketing
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="../pages/enterpriseitsolutions.html">
+                                    Enterprise IT Solutions
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <span><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></span>
+                                <a href="../pages/training.html">
+                                    Training
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="boxes Address col-lg-4 col-md-6 my-2">
+                    <div class="heading">
+                        <h2><span class="text-warning">Contact</span></h2>
+                    </div>
+                    <div class="list">
+                        <li class="my-3">
+                            <span><i class="fa-solid fa-location-dot" style="font-size: 18px;"></i></span>
+                            <a href="https://maps.app.goo.gl/bMGbZgifPFBfjrm5A" class="my-2 p-0">
+                                C-89, Vibhuti Khand Gomti Nagar, Lucknow - 226010
+                            </a>
+                        </li>
+
+                        <li class="my-3">
+                            <span><i class="fa-solid fa-phone" style="font-size: 18px;"></i></span>
+                            <a href="tel:+915223517741" class="my-2 p-0">
+                                Phone: +91 522 351 7741
+                            </a>
+                        </li>
+
+                        <li class="my-3">
+                            <span><i class="fa-solid fa-envelope" style="font-size: 18px;"></i></span>
+                            <a href="mailto:info@icontechindia.com" class="my-2 p-0">
+                                info@icontechindia.com
+                            </a>
+                        </li>
+
+                        <iframe class="map my-2"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14236.247269521054!2d80.999127!3d26.869777!3m2!1i1024!2i768!4f12.1!3m3!1m2!1s0x399be3ddcd6412e3%3A0x91d7053bb5b9757e!2sICONTECH!5e0!3m2!1sen!2sin!4v1727878978202!5m2!1sen!2sin"
+                            style="border-radius: 6px; border : 1px solid white;" width="300px" loading="lazy"></iframe>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="m-0 text-white border-2">
+
+        <div class="d-flex justify-content-around align-items-center flex-wrap">
+            <div class='text-center p-3 '>
+                <p class="mb-0 py-2 text-warning">Copyright © Icontech 2024. All rights reserved.</p>
+            </div>
+            <div>
+                <div class="follow-us d-block">
+                    <div class="social-links d-flex justify-content-evenly align-items-center m-auto">
+                        <div class="link mx-2 mx-2 facebook fs-2">
+                            <a href="https://www.facebook.com/icontechin?ref=pages_you_manage" target="_blank"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                        </div>
+
+                        <div class="link mx-2 instagram fs-2">
+                            <a href="https://www.instagram.com/icontechindia/" target="_blank"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                        </div>
+
+                        <div class="link mx-2 linkedIn fs-2">
+                            <a href="https://www.linkedin.com/company/icontechindia/" target="_blank"><i
+                                    class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+
+                        <div class="link mx-2 x-twitter fs-2">
+                            <a href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4"><i
+                                    class="fa-brands fa-twitter"></i></a>
+                        </div>
+
+                        <div class="link mx-2 x-twitter fs-2">
+                            <a href="https://x.com/i/flow/login?redirect_after_login=%2FIcontech4">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="goToTop" style="display: none;" onclick="goToTop()">
+            <div class="bg-danger d-flex justify-content-center align-items-center rounded-5 border text-light position-fixed"
+                style="height: 50px; width: 50px;bottom: 30px;right: 30px;cursor: pointer;">
+                <i class="fa-solid fa-chevron-up"></i>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- bootstrap cdn  -->
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+
+    <!-- fontawsome cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
+        integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- my js  -->
+    <script src="../index.js"></script>
+
+</body>
+
+</html>
