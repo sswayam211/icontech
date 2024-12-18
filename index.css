@@ -328,7 +328,7 @@ header .country img {
 
 /* services section css  */
 .services .link {
-    transition: all .5s ease;
+    transition: all .3s ease;
     transform: translateX(-20px);
     z-index: -1;
 }
@@ -547,7 +547,7 @@ header .country img {
     height: 400px;
     width: 300px;
     padding: 10px;
-    transition: background-size .5s ease;
+    transition: background-size .3s ease;
 }
 
 .solutions .boxes .box .sol-col-2 {
@@ -560,7 +560,7 @@ header .country img {
     backdrop-filter: blur(5px);
     padding: 10px;
     background: #00000075;
-    transition: left .5s ease;
+    transition: left .3s ease;
 }
 
 .solutions .boxes .box:hover .sol-col-1 {
@@ -568,7 +568,7 @@ header .country img {
 }
 
 .solutions .boxes .box .box-heading {
-    transition: transform .5s ease;
+    transition: transform .3s ease;
 }
 
 .solutions .boxes .box:hover .box-heading {
@@ -605,7 +605,7 @@ header .country img {
     padding: 10px;
     transform: translateX(5px);
     border: 1px solid white;
-    transition: all .5s ease;
+    transition: all .3s ease;
 }
 
 .solutions .boxes .box .sol-col-2 .bottom .link:hover {
