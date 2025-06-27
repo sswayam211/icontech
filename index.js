@@ -1,5 +1,5 @@
 // body Animation---------------------------------------------------------------------------------------------------------------------------------------------------------------
-{
+try {
     function animation() {
         // console.log(e);
         let body = document.querySelector('body');
@@ -9,10 +9,13 @@
     }
     window.onload = animation();
 }
+catch(err) {
+    console.log(err);
+}
 
 
 // header section js -----------------------------------------------------------------------------------------------------------------------------------------------------------
-{
+try{
     let header = document.querySelector("header");
     let prevScroll = header.offsetHeight;
 
@@ -49,18 +52,20 @@
         }
 
     });
+}catch(err) {
+    console.log(err);
 }
 
 
 
 
 // slider section js --------------------------------------------------------------------------------------------------------------------------------------------------------------
-{
+try{
     let slides = document.querySelectorAll(".slider .sildes .slide");
     let slideDetails = document.querySelectorAll(".slider .sildes .slide .slide-detail");
     let dots = document.querySelectorAll(".slider .dots .dot");
 
-    // console.log("slides length", slides.length);
+    console.log("slides length", slides.length);
     let count = 1;
     let slideInterval = 5000; // change slide after every 5s
 
@@ -104,11 +109,13 @@
     }, slideInterval);
 
     // window.onload = changeSlides(count);
+}catch(err) {
+    console.log(err);
 }
 
 
 // solutions section --------------------------------------------------------------------------------------------------------------------------------------------------------------
-{
+try{
     let solutionsScrollHeight = document.querySelector("body").offsetHeight - document.querySelector('footer').offsetHeight - document.querySelector('.customers').offsetHeight - document.querySelector('.connect').offsetHeight - document.querySelector('.solutions').offsetHeight + (document.querySelector('.solutions .heading').offsetHeight / 2);
     // let solutionsHeight = document.querySelector('.above-header').offsetHeight + document.querySelector('header').offsetHeight + document.querySelector('.slider').offsetHeight + document.querySelector('.services').offsetHeight + document.querySelector('.about').offsetHeight + (document.querySelector('.solutions .heading').offsetHeight / 2);
     // console.log(solutionsScrollHeight);
@@ -127,10 +134,12 @@
             // console.log('solutions heading visible');
         }
     });
+}catch(err) {
+    console.log(err);
 }
 
 // customers seaction -------------------------------------------------------------------------------------------------------------------------------------------------------------
-{
+try{
     function scrollLeft() {
         let customers = document.querySelector('.customers .customers-images');
         // console.log(customers);
@@ -152,11 +161,13 @@
     setInterval(() => {
         scrollLeft();
     }, 3000);
+}catch(err) {
+    console.log(err);
 }
 
 
 // go to top function -------------------------------------------------------------------------------------------------------------------------------------------------------------
-{
+try{
     function goToTop() {
         window.scrollTo({
             top: 0,
@@ -176,4 +187,6 @@
             goToTopButton.style.display = "none";
         }
     });
+}catch(err) {
+    console.log(err);
 }

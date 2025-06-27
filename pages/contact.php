@@ -1,10 +1,71 @@
+<?php
+$errorMessage = false;
+$message = false;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // creating connection to database =
+    $server = 'localhost';
+    $username = 'root';
+    $password = '';
+    $dbName = 'icontech';
+
+    // establishng connection to database 
+    $con = new mysqli($server, $username, $password, $dbName);
+
+    if (!$con) {
+        // echo 'connection failed';
+        $errorMessage = 'There is some techinical error, Please try again later';
+        die();
+    } else {
+        // echo 'conntection succesfull';
+        //  inserting data to database 
+        if (!preg_match("/^[a-zA-Z-' ]*$/", $_POST['name'])) {
+            $errorMessage = "Name must contain only letters and white spaces.";
+            // return;
+        }
+        $name = $_POST['name'];
+        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+            $errorMessage = "Invalid Email formate.";
+            // return $errorMessage;
+        }
+        $email = $_POST['email'];
+        if (!preg_match("/^[a-zA-Z-' ]*$/", $_POST['subject'])) {
+            $errorMessage = "Subject must contain only letters and white spaces.";
+            // return;
+        }
+        $subject = $_POST['subject'];
+        $formMessage = $_POST['message'];
+
+        // sql to insert data in database
+        $sql = "INSERT INTO `contact_details` (`NAME`, `EMAIL`, `SUBJECT`, `MESSAGE`) VALUES ('$name', '$email', '$subject', '$formMessage')";
+        if (!$errorMessage) {
+            $result = $con->query($sql);
+            if ($result) {
+                $message = 'Thankyou for contacting us.';
+                // header('location:contact.php?status=1#contactForm');
+            } else {
+                $errorMessage = 'There is some techinical error, Please try again later';
+                // header('location:contact.phpstatus=0#contactForm');
+            }
+        }
+    }
+
+    $con->close();
+}
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Marketing</title>
+    <title>Contact</title>
 
     <!-- bootstrap cdn  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -30,6 +91,7 @@
     <style>
         main {
             font-family: 'poppins';
+            color: rgb(65, 62, 62);
         }
 
         .subheading a:hover {
@@ -50,13 +112,18 @@
             font-style: normal;
         }
 
-        .box{
-            transition: all .3s linear;
+        .contact a {
+            color: rgb(65, 62, 62);
         }
 
-        .box:hover {
-            cursor: pointer;
-            box-shadow: 0px 0px 10px #003188;
+        .contact-box:hover {
+            color: #004581;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            font-weight: 500;
+            font-size: 17px;
         }
     </style>
 </head>
@@ -67,7 +134,8 @@
         <div class="container-fluid">
             <div class="row align-items-center justify-content-between" style="font-size: 15px;">
                 <div class="col-md-8 d-flex">
-                    <a href="mailto:info@icontechindia.com" class="above-header-link text-decoration-none px-2 border-end border-2">
+                    <a href="mailto:info@icontechindia.com"
+                        class="above-header-link text-decoration-none px-2 border-end border-2">
                         <p class="m-0 d-inline">Email: info@icontechindia.com</p>
                     </a>
                     <a href="tel:+915223517741" class="above-header-link text-decoration-none px-2">
@@ -88,7 +156,7 @@
                         </ul>
                     </div>
 
-                    <a  href="../pages/getquote.php"><button type="button" class="btn btn-danger rounded-0"
+                    <a href="../pages/getquote.php"><button type="button" class="btn btn-danger rounded-0"
                             style="font-size: 15px;"> <i class="fa-solid fa-magnifying-glass"></i>
                             Get Quote</button></a>
                 </div>
@@ -360,93 +428,103 @@
         </nav>
     </header>
 
-    <main class="poppins">
+
+    <main class="poppins ">
 
         <div class="w-100 position-relative"
-            style="height: 225px; background: url('../images/page-digitalmarketing-banner.png');background-position: center left; background-repeat: no-repeat; background-size: cover;">
-            <div class="w-100 h-100 position-absolute d-sm-none"
-                style="background-color: rgba(0, 0, 0, 0.656);z-index: 2;">
+            style="height: 225px; background: url('../images/page-conntact-banner.png');background-position: center right; background-repeat: no-repeat; background-size: cover;">
+            <div class="w-100 h-100 position-absolute " style="background-color: rgba(0, 0, 0, 0.38);z-index: 2;">
             </div>
-            <div class="container position-relative d-flex justify-content-center flex-column h-100 text-light p-sm-5 text-center text-sm-end"
+            <div class="container position-relative d-flex justify-content-center flex-column h-100 text-light p-sm-5 text-center"
                 style="z-index: 10;">
                 <div class="heading ">
-                    <h1 class="fw-bold">Digital Marketing</h1>
+                    <h1 class="fw-bold">Get In Touch</h1>
                 </div>
                 <div class="subheading">
-                    <p style="font-size: 12px;"><a class="text-light" href="../index.html">HOME</a> / Digital Marketing
+                    <p style="font-size: 12px;"><a class="text-light" href="../index.html">HOME</a> / Contact
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="container p-sm-5 py-4">
-            <div>
-                <h2 class="text-center m-3">Social Media Marketing is the Best Ever</h2>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6 text-center">
-                    <div class="">
-                        <img class="img-fluid" src="../images/Page-digitalmarketing-image2.gif" alt="">
+        <div class="contact container px-lg-5 py-lg-0 py-md-4 py-5 ">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="" style="margin: .75rem 8px;">
+                        <h3>Contact Information</h3>
+                    </div>
+                    <div>
+                        <a href="tel:+915223517741">
+                            <div class="contact-box border m-2 p-4 d-flex align-items-center">
+                                <i class="fa-solid fa-phone fs-2 mx-3"></i>
+                                <p class="m-0">+91 94541-27222</p>
+                            </div>
+                        </a>
+                        <a href="mailto:info@icontechindia.com">
+                            <div class="contact-box border m-2 p-4 d-flex align-items-center">
+                                <i class="fa-solid fa-envelope fs-2 mx-3"></i>
+                                <p class="m-0">
+                                    info@icontechindia.com</p>
+                            </div>
+                        </a>
+                        <a href="https://maps.app.goo.gl/bMGbZgifPFBfjrm5A" target="_blank">
+                            <div class="contact-box border m-2 p-4 d-flex align-items-center">
+                                <i class="fa-solid fa-location-pin fs-2 mx-3"></i>
+                                <p class="m-0">C-89, Vibhuti Khand Gomti Nagar, Lucknow - 226010</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="p-3">
-                        <div class="row">
-                            <div class="dig-mar-box col-md-6 p-2">
-                                <div class="box bg-light p-2 py-5 text-center border border-3"
-                                    style="border-radius: 0px 30px 0px 30px;height: 310px; overflow: hidden;">
-                                    <img class="img-fluid pb-3" src="../images/icon-digitalMarketing.png" alt=""
-                                        style="width: 50px;">
-                                    <h5 class="m-0 mb-2">Online Advertising</h5>
-                                    <p class="text-dark"
-                                        style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';">
-                                        Our Enterprise IT solutions are designed to integrate multiple
-                                        facets of a
-                                        company’s business through the interchange</p>
-                                </div>
-                            </div>
-                            <div class="dig-mar-box col-md-6 p-2">
-                                <div class="box bg-light p-2 py-5 text-center border border-3"
-                                    style="border-radius: 0px 30px 0px 30px;height: 310px;overflow: hidden;">
-                                    <img class="img-fluid pb-3" src="../images/icon-seo.png" alt=""
-                                        style="width: 50px;">
-                                    <h5 class="m-0 mb-2">(SEO)</h5>
-                                    <p class="text-dark"
-                                        style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';">
-                                        We are a full-service mobile application development company in
-                                        India that offers custom app and design solutions</p>
-                                </div>
-                            </div>
-                            <div class=" dig-mar-box col-md-6 p-2">
-                                <div class="box bg-light p-2 py-5 text-center border border-3"
-                                    style="border-radius: 0px 30px 0px 30px;height: 310px;overflow: hidden;">
-                                    <img class="img-fluid pb-3" src="../images/icon-webanalytics.png" alt=""
-                                        style="width: 50px;">
-                                    <h5 class="m-0 mb-2">Web Analytics</h5>
-                                    <p class="text-dark"
-                                        style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';">
-                                        Digital Marketing Certification Course transforms you into a
-                                        digital market specialist in domains like SEO.
+                <div class="col-md-6">
+                    <img class="img-fluid" src="../images/page-contact-image2.png" alt="">
+                </div>
+            </div>
 
-                                    </p>
-                                </div>
+            <div class=" p-3 pb-0 pb-md-5" id='contactForm'>
+                <div class="border p-3 py-5 bg-light shadow">
+                    <div class="mb-3 mx-1">
+                        <h4>Contact Form</h4>
+                    </div>
+                    <form action="" method="post">
+                        <?php
+                        if ($errorMessage) {
+                            echo '
+                            <div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                <strong>Error: </strong> ' . $errorMessage . '
                             </div>
-                            <div class="dig-mar-box col-md-6 p-2">
-                                <div class="box bg-light p-2 py-5 text-center border border-3"
-                                    style="border-radius: 0px 30px 0px 30px;height: 310px;overflow: hidden;">
-                                    <img class="img-fluid pb-3" src="../images/icon-mobilemarketing.png" alt=""
-                                        style="width: 50px;">
-                                    <h5 class="m-0 mb-2">Mobile Marketiing</h5>
-                                    <p class="text-dark"
-                                        style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';">
-                                        IT training includes courses related to the application,
-                                        design, development, implementation, support or management
-                                    </p>
-                                </div>
+                            ';
+                        }
+                        if ($message) {
+                            echo '
+                            <div class="alert alert-success alert-dismissible">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                <strong>Success: </strong> ' . $message . '
+                            </div>
+                            ';
+                        }
+                        ?>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control text-capitalize" id="name" name="name" placeholder="Enter your name"
+                                    required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
+                                    required>
                             </div>
                         </div>
-                    </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control text-capitalize" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="message" name="message" placeholder="Your message for us..." rows="4"
+                                required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-danger p-2 px-4 rounded-5">Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -461,7 +539,7 @@
 
         <div class="Footer text-light container py-4">
             <div class="row">
-                <div class="boxes Solution col-lg-4 col-md-6 my-2">
+                <div class="boxes Solution col-lg-4 col-md-6 col-md-6 my-2">
                     <div class="heading">
                         <h2>Our <span class="text-warning">Solution</span></h2>
                     </div>
@@ -507,7 +585,7 @@
                     </div>
                 </div>
 
-                <div class="boxes Services col-lg-4 col-md-6 my-2">
+                <div class="boxes Services col-lg-4 col-md-6 col-md-6 my-2">
                     <div class="heading">
                         <h2>Our <span class="text-warning">Services</span></h2>
                     </div>
@@ -547,7 +625,7 @@
                     </div>
                 </div>
 
-                <div class="boxes Address col-lg-4 col-md-6 my-2">
+                <div class="boxes Address col-lg-4 col-md-6 col-md-6 my-2">
                     <div class="heading">
                         <h2><span class="text-warning">Contact</span></h2>
                     </div>
@@ -632,11 +710,10 @@
     </footer>
 
 
-
     <!-- bootstrap cdn  -->
     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- fontawsome cdn  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
@@ -646,6 +723,17 @@
 
     <!-- my js  -->
     <script src="../index.js"></script>
+
+    <!-- <script>
+        let form = document.querySelector("form");
+
+        function handleSubmit(e) {
+            e.preventDefault();
+
+        }
+
+        form.addEventListener("submit", handleSubmit);
+    </script> -->
 
 </body>
 

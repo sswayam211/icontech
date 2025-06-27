@@ -60,7 +60,8 @@ body::-webkit-scrollbar-thumb {
     top: -10px;
     left: 15px;
     border-radius: 20px;
-    animation: width 5s infinite ease-in-out;
+    transition: all .8s ease-in-out;
+    /* animation: width 5s infinite ease-in-out; */
 }
 
 @keyframes width {
@@ -82,16 +83,16 @@ body::-webkit-scrollbar-thumb {
         0% {
             width: 10%;
         }
-    
+
         50% {
             width: 91%;
         }
-    
+
         100% {
             width: 10%;
         }
     }
-    
+
 }
 
 
@@ -175,6 +176,12 @@ header .dropdown-menu {
     }
 }
 
+@media screen and (max-width:500px) {
+    header .offcanvas.offcanvas-end {
+        width: 100%;
+    }
+}
+
 header .nav-link {
     color: black;
     padding: 20px 0px;
@@ -201,10 +208,6 @@ header .dropdown-link:hover .nav-link {
 header .dropdown-item {
     color: white;
     margin: 10px 0px;
-}
-
-header #contact {
-    /* display: none; */
 }
 
 header #contact-globe {
@@ -411,6 +414,16 @@ header .country img {
     background-size: cover;
     z-index: -1;
     padding: 100px 0px;
+}
+
+.about:hover .heading .heading-border {
+    width: 96%;
+}
+
+@media screen and (max-width:600px) {
+    .about:hover .heading .heading-border {
+        width: 91%;
+    }
 }
 
 .about .details .heading h1 {
@@ -742,6 +755,16 @@ header .country img {
 }
 
 /* customer section css  */
+.customers:hover .heading .heading-border {
+    width: 96%;
+}
+
+@media screen and (max-width:600px) {
+    .customers:hover .heading .heading-border {
+        width: 91%;
+    }
+}
+
 .customers .customers-images {
     display: flex;
     align-items: center;
@@ -791,8 +814,8 @@ footer a {
     transition: all .25s ease;
 }
 
-footer a:hover {
-    text-decoration: underline;
+footer li:hover a {
+    text-decoration: underline dashed;
     color: rgb(147 191 255);
 }
 

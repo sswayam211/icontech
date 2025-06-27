@@ -1,10 +1,65 @@
+<?php
+$errorMessage = false;
+$message = false;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // creating connection to database =
+    $server = 'localhost';
+    $username = 'root';
+    $password = '';
+    $dbName = 'icontech';
+
+    // establishng connection to database 
+    $con = mysqli_connect($server, $username, $password, $dbName);
+
+    if (!$con) {
+        // echo 'connection failed';
+        die();
+        $errorMessage = 'There is some techinical error, Please try again later';
+    } else {
+        // echo 'conntection succesfull';
+        //  inserting data to database 
+        if (!preg_match("/^[a-zA-Z-' ]*$/", $_POST['name'])) {
+            $errorMessage = "Name must contain only letters and white spaces.";
+            // return;
+        }
+        $name = $_POST['name'];
+        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+            $errorMessage = "Invalid Email formate.";
+            // return $errorMessage;
+        }
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $service = $_POST['service'];
+        $budget = $_POST['budget'];
+        $timeline = $_POST['timeline'];
+        $projectDetails = $_POST['projectDetails'];
+
+        // sql to insert data in database
+        $sql = "INSERT INTO `get_quote_page` (`NAME`, `EMAIL`, `PHONE_NO`, `SERVICE_NEEDED`, `BUDGET`, `TIMELINE`, `PROJECT_DETAILS`) VALUES ('$name', '$email', '$phone', '$service', '$budget', '$timeline', '$projectDetails')";
+
+        if (!$errorMessage) {
+            $result = mysqli_query($con, $sql);
+            if ($result) {
+                $message = 'Thankyou for contacting us, We will reply back soon on your given Email address.';
+            } else {
+                $errorMessage = 'There is some techinical error, Please try again later';
+            }
+        }
+    }
+
+    $con->close();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Marketing</title>
+    <title>Get Quote</title>
 
     <!-- bootstrap cdn  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -30,6 +85,7 @@
     <style>
         main {
             font-family: 'poppins';
+            color: rgb(65, 62, 62);
         }
 
         .subheading a:hover {
@@ -50,24 +106,28 @@
             font-style: normal;
         }
 
-        .box{
-            transition: all .3s linear;
+        input,
+        textarea {
+            color: rgb(87 90 94);
+            font-weight: 500;
+            font-size: 17px;
         }
 
-        .box:hover {
-            cursor: pointer;
-            box-shadow: 0px 0px 10px #003188;
+        input::placeholder,
+        textarea::placeholder {
+            font-weight: 500;
+            font-size: 17px;
         }
     </style>
 </head>
 
 <body>
-
     <div class="above-header">
         <div class="container-fluid">
             <div class="row align-items-center justify-content-between" style="font-size: 15px;">
                 <div class="col-md-8 d-flex">
-                    <a href="mailto:info@icontechindia.com" class="above-header-link text-decoration-none px-2 border-end border-2">
+                    <a href="mailto:info@icontechindia.com"
+                        class="above-header-link text-decoration-none px-2 border-end border-2">
                         <p class="m-0 d-inline">Email: info@icontechindia.com</p>
                     </a>
                     <a href="tel:+915223517741" class="above-header-link text-decoration-none px-2">
@@ -88,7 +148,7 @@
                         </ul>
                     </div>
 
-                    <a  href="../pages/getquote.php"><button type="button" class="btn btn-danger rounded-0"
+                    <a href="../pages/getquote.php"><button type="button" class="btn btn-danger rounded-0"
                             style="font-size: 15px;"> <i class="fa-solid fa-magnifying-glass"></i>
                             Get Quote</button></a>
                 </div>
@@ -310,12 +370,14 @@
                                                     src="../images/IND_Flag.png" alt="">(English)
                                             </div>
                                         </a></li>
-                                    <li><a class="dropdown-item text-dark p-0" href="https://it-pro-me.com/" target="_blank">
+                                    <li><a class="dropdown-item text-dark p-0" href="https://it-pro-me.com/"
+                                            target="_blank">
                                             <div class="country SA d-flex align-items-center p-2"><img
                                                     src="../images/UAE_Flag.png" alt="">(English)
                                             </div>
                                         </a></li>
-                                    <li><a class="dropdown-item text-dark p-0" href="https://it-pro-me.com/" target="_blank">
+                                    <li><a class="dropdown-item text-dark p-0" href="https://it-pro-me.com/"
+                                            target="_blank">
                                             <div class="country UK d-flex align-items-center p-2"><img
                                                     src="../images/UK_Flag.png" alt="">(English)</div>
                                         </a></li>
@@ -360,94 +422,112 @@
         </nav>
     </header>
 
-    <main class="poppins">
+    <main class="poppins ">
 
         <div class="w-100 position-relative"
-            style="height: 225px; background: url('../images/page-digitalmarketing-banner.png');background-position: center left; background-repeat: no-repeat; background-size: cover;">
-            <div class="w-100 h-100 position-absolute d-sm-none"
-                style="background-color: rgba(0, 0, 0, 0.656);z-index: 2;">
+            style="height: 225px; background: url('../images/page-letsconnect-banner.webp');background-position: center; background-repeat: no-repeat; background-size: cover;">
+            <div class="w-100 h-100 position-absolute " style="background-color: rgba(0, 0, 0, 0.38);z-index: 2;">
             </div>
-            <div class="container position-relative d-flex justify-content-center flex-column h-100 text-light p-sm-5 text-center text-sm-end"
+            <div class="container position-relative d-flex justify-content-center flex-column h-100 text-light p-sm-5 text-center"
                 style="z-index: 10;">
                 <div class="heading ">
-                    <h1 class="fw-bold">Digital Marketing</h1>
+                    <h1 class="fw-bold">Let's Connect!</h1>
                 </div>
                 <div class="subheading">
-                    <p style="font-size: 12px;"><a class="text-light" href="../index.html">HOME</a> / Digital Marketing
+                    <p style="font-size: 12px;">Together, we'll scale milestones for your next business idea.
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="container p-sm-5 py-4">
+        <div class="container p-sm-5 py-5">
             <div>
-                <h2 class="text-center m-3">Social Media Marketing is the Best Ever</h2>
-            </div>
+                <form action="" method="post">
 
-            <div class="row">
-                <div class="col-lg-6 text-center">
-                    <div class="">
-                        <img class="img-fluid" src="../images/Page-digitalmarketing-image2.gif" alt="">
+                    <?php
+                    if ($errorMessage) {
+                        echo '
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <strong>Error: </strong> ' . $errorMessage . '
+                        </div>
+                        ';
+                    }
+                    if ($message) {
+                        echo '
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <strong>Success: </strong> ' . $message . '
+                        </div>
+                        ';
+                    }
+                    ?>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control bg-light" id="name" name="name" placeholder="Your Name"
+                            required>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="p-3">
-                        <div class="row">
-                            <div class="dig-mar-box col-md-6 p-2">
-                                <div class="box bg-light p-2 py-5 text-center border border-3"
-                                    style="border-radius: 0px 30px 0px 30px;height: 310px; overflow: hidden;">
-                                    <img class="img-fluid pb-3" src="../images/icon-digitalMarketing.png" alt=""
-                                        style="width: 50px;">
-                                    <h5 class="m-0 mb-2">Online Advertising</h5>
-                                    <p class="text-dark"
-                                        style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';">
-                                        Our Enterprise IT solutions are designed to integrate multiple
-                                        facets of a
-                                        company’s business through the interchange</p>
-                                </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <input type="email" class="form-control bg-light" id="email" name="email"
+                                    placeholder="Email" required>
                             </div>
-                            <div class="dig-mar-box col-md-6 p-2">
-                                <div class="box bg-light p-2 py-5 text-center border border-3"
-                                    style="border-radius: 0px 30px 0px 30px;height: 310px;overflow: hidden;">
-                                    <img class="img-fluid pb-3" src="../images/icon-seo.png" alt=""
-                                        style="width: 50px;">
-                                    <h5 class="m-0 mb-2">(SEO)</h5>
-                                    <p class="text-dark"
-                                        style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';">
-                                        We are a full-service mobile application development company in
-                                        India that offers custom app and design solutions</p>
-                                </div>
-                            </div>
-                            <div class=" dig-mar-box col-md-6 p-2">
-                                <div class="box bg-light p-2 py-5 text-center border border-3"
-                                    style="border-radius: 0px 30px 0px 30px;height: 310px;overflow: hidden;">
-                                    <img class="img-fluid pb-3" src="../images/icon-webanalytics.png" alt=""
-                                        style="width: 50px;">
-                                    <h5 class="m-0 mb-2">Web Analytics</h5>
-                                    <p class="text-dark"
-                                        style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';">
-                                        Digital Marketing Certification Course transforms you into a
-                                        digital market specialist in domains like SEO.
-
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="dig-mar-box col-md-6 p-2">
-                                <div class="box bg-light p-2 py-5 text-center border border-3"
-                                    style="border-radius: 0px 30px 0px 30px;height: 310px;overflow: hidden;">
-                                    <img class="img-fluid pb-3" src="../images/icon-mobilemarketing.png" alt=""
-                                        style="width: 50px;">
-                                    <h5 class="m-0 mb-2">Mobile Marketiing</h5>
-                                    <p class="text-dark"
-                                        style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';">
-                                        IT training includes courses related to the application,
-                                        design, development, implementation, support or management
-                                    </p>
-                                </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <input type="number" class="form-control bg-light" id="phone" name="phone"
+                                    placeholder="Phone No." maxlength="12" minlength="10" max="9999999999" min="1111111111" required>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="mb-3 row">
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <select class="form-select p-2 border bg-light" name="service" id="sevice"
+                                style="color: rgb(87 90 94);font-weight: 500;font-size: 17px;">
+                                <option value="">Choose Services</option>
+                                <option value="Mobile Applications">Mobile Applications</option>
+                                <option value="Website / Web Applications">Website / Web Applications</option>
+                                <option value="Print and Branding">Print and Branding</option>
+                                <option value="SEO, SEM and SMO">SEO, SEM and SMO</option>
+                                <option value="Magento eCommerce">Magento eCommerce</option>
+                                <option value="Manage Cloude Services AWS">Manage Cloude Services AWS</option>
+                                <option value="Outsourced Product Development">Outsourced Product Development</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <select class="form-select p-2 border bg-light" name="budget" id="budget"
+                                style="color: rgb(87 90 94);font-weight: 500;font-size: 17px;">
+                                <option value="Define Your Budget Criteria">Define Your Budget Criteria</option>
+                                <option value="Less than $10,000">Less than $10,000</option>
+                                <option value="$10,000 to $30,000">$10,000 to $30,000</option>
+                                <option value="$30,000 to $50,000">$30,000 to $50,000</option>
+                                <option value="More than $50,000">More than $50,000</option>
+                                <option value="Not Sure">Not Sure</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4">
+                            <select class="form-select p-2 border bg-light" name="timeline" id="timeline"
+                                style="color: rgb(87 90 94); font-weight: 500;font-size: 17px;">
+                                <option value="">Tell us the timeline you have</option>
+                                <option value="Less than 1 month">Less than 1 month</option>
+                                <option value=">1 to 2 months">1 to 2 months</option>
+                                <option value="2 to 3 months">2 to 3 months</option>
+                                <option value="3 to 5 months">3 to 5 months</option>
+                                <option value="5 to 8 months">5 to 8 months</option>
+                                <option value="More than 8 months">More than 8 months</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control bg-light" id="project-details" name="projectDetails"
+                            placeholder="Would you like to explain about your project?" rows="4" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-danger p-2 px-4 rounded-5">Send Message</button>
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -507,7 +587,7 @@
                     </div>
                 </div>
 
-                <div class="boxes Services col-lg-4 col-md-6 my-2">
+                <div class="boxes Services col-lg-4 col-md-6 col-md-6 my-2">
                     <div class="heading">
                         <h2>Our <span class="text-warning">Services</span></h2>
                     </div>
@@ -547,7 +627,7 @@
                     </div>
                 </div>
 
-                <div class="boxes Address col-lg-4 col-md-6 my-2">
+                <div class="boxes Address col-lg-4 col-md-6 col-md-6 my-2">
                     <div class="heading">
                         <h2><span class="text-warning">Contact</span></h2>
                     </div>
@@ -632,11 +712,10 @@
     </footer>
 
 
-
     <!-- bootstrap cdn  -->
     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- fontawsome cdn  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
